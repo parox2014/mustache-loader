@@ -17,10 +17,14 @@ var minifierDefaults = {
 module.exports = function(source) {
     var query = loaderUtils.getOptions(this) || {};
     var hoganOpts = extend(query, { asString: true });
+    var partials=query.partials;
+
     delete hoganOpts.minify;
     delete hoganOpts.noShortcut;
     delete hoganOpts.clientSide;
     delete hoganOpts.tiny;
+    delete hoganOpts.partials;
+
     var render;
     if (query.render) {
         if (query.clientSide) {
@@ -45,6 +49,17 @@ module.exports = function(source) {
         }
 
         source = minifier.minify(source, minifierOptions);
+    }
+
+    if(partials){
+        if(render){
+            var T=Hogan.compile(source);
+            var result=T.render(render,partials);
+          
+            return 'module.exports='+JSON.stringify(result);
+        }
+    
+        return 'module.exports='+JSON.stringify(source);
     }
 
     var suffix;

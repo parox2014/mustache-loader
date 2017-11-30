@@ -11,7 +11,7 @@ Compiles [Mustache](https://mustache.github.io/) templates with [Hogan](https://
 ### Install
 
 ```sh
-$ npm i -S mustache-loader
+$ npm i -S dwy-mustache-loader
 ```
 
 ### Usage
@@ -21,7 +21,7 @@ webpack@1.x
 module: {
     loaders: [ {
         test: /\.html$/,
-        loader: 'mustache'
+        loader: 'dwy-mustache'
         // loader: 'mustache?minify'
         // loader: 'mustache?{ minify: { removeComments: false } }'
         // loader: 'mustache?noShortcut'
@@ -33,7 +33,7 @@ webpack@2.x
 module: {
     rules: [ {
         test: /\.html$/,
-        loader: 'mustache-loader'
+        loader: 'dwy-mustache-loader'
         // loader: 'mustache-loader?minify'
         // loader: 'mustache-loader?{ minify: { removeComments: false } }'
         // loader: 'mustache-loader?noShortcut'
@@ -67,12 +67,16 @@ For example, the following will render `index.mustache` with the provided data (
 module: {
     rules: [ {
         test: /index\.mustache$/,
-        loader: 'mustache-loader',
+        loader: 'dwy-mustache-loader',
         options: {
             tiny: true,
             render: {
                 title: 'hello world',
             },
+            partials:{
+                header:``,
+                footer:``
+            }
         },
     } ]
 }

@@ -1,6 +1,6 @@
 {
-  "name": "mustache-loader",
-  "version": "1.2.0",
+  "name": "dwy-mustache-loader",
+  "version": "1.2.1",
   "description": "Mustache loader for webpack",
   "keywords": [
     "webpack",
@@ -8,15 +8,15 @@
     "mustache",
     "hogan"
   ],
-  "homepage": "https://github.com/deepsweet/mustache-loader",
+  "homepage": "https://github.com/parox2014/mustache-loader",
   "author": {
-    "name": "Kir Belevich",
-    "email": "kir@soulshine.in",
-    "url": "https://github.com/deepsweet"
+    "name": "William Du",
+    "email": "parox2014@gmail.com",
+    "url": "https://github.com/parox2014"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/deepsweet/mustache-loader.git"
+    "url": "https://github.com/parox2014/mustache-loader"
   },
   "main": "index.js",
   "peerDependencies": {
@@ -27,6 +27,7 @@
     "hogan.js": "^3.0.2",
     "html-minifier": "^3.1.0",
     "loader-utils": "^1.1.0",
+    "user": "0.0.0",
     "xtend": "^4.0.0"
   },
   "devDependencies": {
